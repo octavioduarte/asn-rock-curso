@@ -53,13 +53,29 @@ P₃₅ = 3 + 16 = 19
       - 70 70 70 70 79 80 82 84 90 90 91 95
 
   Q1 envolve 70 - 70 - 70
+
   Q2 envolve Q1 + 70 - 79 - 80
+
   Q3 envolve Q2 + 82 - 84 - 90
 
 Repare que o fim de Q1 e inicio de Q2 correspondem ao mesmo valor, por tanto é errado afirmar:
 
- - 70 representa 25% dos menores valores
+- “70 representa 25% dos menores valores.”
 
-Quartis ou Percentis nos dizem outra coisa:
+O que os quartis (ou percentis) realmente indicam é:
 
-- 25% dos dados vão até 70
+- 25% dos dados são menores ou iguais a 70.
+
+
+
+- **Outliers¹**: Outliers são valores "discrepantes" em um conjunto de dados. Um método comum para identificá-los (método de Tukey) usa a Amplitude Interquartil (IQR), que é a diferença entre o terceiro quartil (Q3) e o primeiro quartil (Q1):
+
+IQR = Q3 - Q1
+
+Em seguida, calculamos uma margem multiplicando o IQR por 1,5. Esse valor (1.5 * IQR) define a distância a partir dos quartis para estabelecer os limites.
+
+Um outlier é, portanto, qualquer valor que esteja:
+
+Abaixo do Limite Inferior: Q1 - 1.5 * IQR
+
+Acima do Limite Superior: Q3 + 1.5 * IQR
