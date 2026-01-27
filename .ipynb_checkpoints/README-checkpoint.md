@@ -2,16 +2,13 @@
 
 ## 🧮 Fórmula para Cálculo de Percentis
 
-
 ```text
 k = (k/100) × (n + 1)
 ```
 
-
 **Onde:**  
 🔹 **k** = percentil desejado (ex: 25 para o 25º percentil)  
-🔹 **n** = número total de observações  
-
+🔹 **n** = número total de observações
 
 ### 🔢 Interpolação para Posições Não Inteiras
 
@@ -20,8 +17,6 @@ Quando o resultado **não é um número inteiro**, fazemos uma **média ponderad
 **Exemplo:** Se resultado = 8.25  
 📌 Significa que está entre as posições 8 e 9  
 📌 Fazemos média ponderada com pesos 0.75 e 0.25
-
-
 
 ### 🧪 Exemplo Prático
 
@@ -34,6 +29,7 @@ P₃₅ = (35/100) × (7 + 1)
 P₃₅ = 0.35 × 8 = 2.8
 
 **📈 Resultado 2.8 indica:**
+
 - Está entre posição 2 (valor 15) e posição 3 (valor 20)
 - Mais próximo da posição 3 → peso maior para valor 20
 
@@ -44,19 +40,20 @@ P₃₅ = 3 + 16 = 19
 **💡 Interpretação:**  
 35% dos valores são **iguais ou menores** que 19 no conjunto ordenado.
 
-
 ## 📝 Lembretes rápidos
 
+<br />
+<br />
 
-- Ao calcular o primeiro quartil (Q1) como um valor X, assumir que X é o ponto abaixo do qual se encontram 25% dos dados. Ou seja, Q1 não é o valor máximo dos primeiros 25%, mas sim o valor que demarca esse limite inferior - Exemplo:
+**O que compreender ao calcular quartis**: Ao calcular o primeiro quartil (Q1) como um valor X, assumir que X é o ponto abaixo do qual se encontram 25% dos dados. Ou seja, Q1 não é o valor máximo dos primeiros 25%, mas sim o valor que demarca esse limite inferior - Exemplo:
 
       - 70 70 70 70 79 80 82 84 90 90 91 95
 
-  Q1 envolve 70 - 70 - 70
+Q1 envolve 70 - 70 - 70
 
-  Q2 envolve Q1 + 70 - 79 - 80
+Q2 envolve Q1 + 70 - 79 - 80
 
-  Q3 envolve Q2 + 82 - 84 - 90
+Q3 envolve Q2 + 82 - 84 - 90
 
 Repare que o fim de Q1 e inicio de Q2 correspondem ao mesmo valor, por tanto é errado afirmar:
 
@@ -66,16 +63,59 @@ O que os quartis (ou percentis) realmente indicam é:
 
 - 25% dos dados são menores ou iguais a 70.
 
+<br />
+<hr />
+<br />
 
-
-- **Outliers¹**: Outliers são valores "discrepantes" em um conjunto de dados. Um método comum para identificá-los (método de Tukey) usa a Amplitude Interquartil (IQR), que é a diferença entre o terceiro quartil (Q3) e o primeiro quartil (Q1):
+**Outliers**: Outliers são valores "discrepantes" em um conjunto de dados. Um método comum para identificá-los (método de Tukey) usa a Amplitude Interquartil (IQR), que é a diferença entre o terceiro quartil (Q3) e o primeiro quartil (Q1):
 
 IQR = Q3 - Q1
 
-Em seguida, calculamos uma margem multiplicando o IQR por 1,5. Esse valor (1.5 * IQR) define a distância a partir dos quartis para estabelecer os limites.
+Em seguida, calculamos uma margem multiplicando o IQR por 1,5. Esse valor (1.5 \* IQR) define a distância a partir dos quartis para estabelecer os limites.
 
 Um outlier é, portanto, qualquer valor que esteja:
 
-Abaixo do Limite Inferior: Q1 - 1.5 * IQR
+Abaixo do Limite Inferior: Q1 - 1.5 \* IQR
 
-Acima do Limite Superior: Q3 + 1.5 * IQR
+Acima do Limite Superior: Q3 + 1.5 \* IQR
+
+<br />
+<hr />
+<br />
+
+
+**Variância e Desvio Padrão**: Variância e Desvio Padrão são medidas de dispersão que por sua vez serve para nos ajudar a entender o quão dispersos estão nossos dados em relação a média.
+
+A **variância** é o resultado da média dos quadrados das diferenças (subtração) entre cada valor e a média aritmética do conjunto. 
+
+O passo a passo para chegar nesse valor seria:
+
+- Tira a média aritmética
+- Faz a subtração de cada um desses valores em relação a essa média aritmética
+- Para cada valor do passo anterior deve-se elevar ao quadrado
+- Fazemos a soma de todos os valores do passo anterior e tiramos a média dele.
+
+**Importante**: Neste último passo onde tira-se a média dos valores do conjunto existe a fórmula populacional:
+
+$$
+\sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}
+$$
+
+E a fórmula amostral:
+
+$$
+\sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N - 1}
+$$
+
+
+A diferença entre as fórmulas está no denominador: na variância populacional divide-se por N, enquanto na variância amostral divide-se por N – 1 (onde N é o número de observações). Usamos N - 1 para chegarmos em um resultado mais conservador na hora de determinar a variância (dado que será um valor maior já que estamos dividindo por um valor menor). É como dar um desconto pela incerteza extra de não conhecer todos os dados.
+
+
+Resumindo variância em uma linha: É a média dos quadrados da diferença entre meus valores e a média aritmética.
+
+O **desvio padrão** é a raiz quadrada da variância para que tenhamos um valor na mesma escala dos dados analisados.
+
+
+$$
+\sigma = \sqrt{\frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}}
+$$

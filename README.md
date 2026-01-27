@@ -84,3 +84,38 @@ Acima do Limite Superior: Q3 + 1.5 \* IQR
 <br />
 
 
+**Variância e Desvio Padrão**: Variância e Desvio Padrão são medidas de dispersão que por sua vez serve para nos ajudar a entender o quão dispersos estão nossos dados em relação a média.
+
+A **variância** é o resultado da média dos quadrados das diferenças (subtração) entre cada valor e a média aritmética do conjunto. 
+
+O passo a passo para chegar nesse valor seria:
+
+- Tira a média aritmética
+- Faz a subtração de cada um desses valores em relação a essa média aritmética
+- Para cada valor do passo anterior deve-se elevar ao quadrado
+- Fazemos a soma de todos os valores do passo anterior e tiramos a média dele.
+
+**Importante**: Neste último passo onde tira-se a média dos valores do conjunto existe a fórmula populacional:
+
+$$
+\sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}
+$$
+
+E a fórmula amostral:
+
+$$
+\sigma^2 = \frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N - 1}
+$$
+
+
+A diferença entre as fórmulas está no denominador: na variância populacional divide-se por N, enquanto na variância amostral divide-se por N – 1 (onde N é o número de observações). Usamos N - 1 para chegarmos em um resultado mais conservador na hora de determinar a variância (dado que será um valor maior já que estamos dividindo por um valor menor). É como dar um desconto pela incerteza extra de não conhecer todos os dados.
+
+
+Resumindo variância em uma linha: É a média dos quadrados da diferença (subtração) entre meus valores e a média aritmética.
+
+O **desvio padrão** é a raiz quadrada da variância para que tenhamos um valor na mesma escala dos dados analisados.
+
+
+$$
+\sigma = \sqrt{\frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}}
+$$
