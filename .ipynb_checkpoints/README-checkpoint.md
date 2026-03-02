@@ -111,11 +111,25 @@ $$
 A diferença entre as fórmulas está no denominador: na variância populacional divide-se por N, enquanto na variância amostral divide-se por N – 1 (onde N é o número de observações). Usamos N - 1 para chegarmos em um resultado mais conservador na hora de determinar a variância (dado que será um valor maior já que estamos dividindo por um valor menor). É como dar um desconto pela incerteza extra de não conhecer todos os dados.
 
 
-Resumindo variância em uma linha: É a média dos quadrados da diferença entre meus valores e a média aritmética.
+Resumindo variância em uma linha: É a média dos quadrados da diferença (subtração) entre meus valores e a média aritmética.
 
 O **desvio padrão** é a raiz quadrada da variância para que tenhamos um valor na mesma escala dos dados analisados.
 
 
 $$
 \sigma = \sqrt{\frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}}
+$$
+
+
+<br />
+<hr />
+<br />
+
+**Coeficiente de variação**: Nos diz em forma percentual o quanto os dados variam em relação a média - Tem 2 grandes propósitos:
+
+- Nos dizer o quanto o desvio padrão varia em relação a média (de forma percentual)
+- Comparar a variação de 2 conjuntos que estejam em escalas numéricas distintas.
+
+$$
+CV = \frac{\sigma}{\mu} \times 100\%
 $$

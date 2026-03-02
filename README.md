@@ -119,3 +119,17 @@ O **desvio padrão** é a raiz quadrada da variância para que tenhamos um valor
 $$
 \sigma = \sqrt{\frac{\sum_{i=1}^{N} (x_i - \mu)^2}{N}}
 $$
+
+
+<br />
+<hr />
+<br />
+
+**Coeficiente de variação**: Nos diz em forma percentual o quanto os dados variam em relação a média - Tem 2 grandes propósitos:
+
+- Nos dizer o quanto o desvio padrão varia em relação a média (de forma percentual)
+- Comparar a variação de 2 conjuntos que estejam em escalas numéricas distintas.
+
+$$
+CV = \frac{\sigma}{\mu} \times 100\%
+$$
