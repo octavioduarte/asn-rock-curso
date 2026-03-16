@@ -2,7 +2,7 @@
 
 
 - [Fórmula para Cálculo de Percentis](#-fórmula-para-cálculo-de-percentis)
-- [O que compreender ao calcular quartis](#o-que-compreender-ao-calcular-quartis)
+- [Compreendendo quartis e seu uso no boxplot](#compreendendo-quartis-e-seu-uso-no-boxplot)
 - [O que são outliers?](#o-que-são-outliers)
 - [Variância e Desvio Padrão](#variância-e-desvio-padrão)
 - [Coeficiente de variação](#coeficiente-de-variação)
@@ -55,41 +55,50 @@ P₃₅ = 3 + 16 = 19
 35% dos valores são **iguais ou menores** que 19 no conjunto ordenado.
 
 <br />
-<hr />
-<br />
-
-
-## O que compreender ao calcular quartis?
-
 <br />
 <br />
 
-Ao calcular o primeiro quartil (Q1) como um valor X, assumir que X é o ponto abaixo do qual se encontram 25% dos dados. Ou seja, Q1 não é o valor máximo dos primeiros 25%, mas sim o valor que demarca esse limite inferior - Exemplo:
 
-      - 70 70 70 70 79 80 82 84 90 90 91 95
+## Compreendendo quartis e seu uso no boxplot
 
-Q1 envolve 70 - 70 - 70
+O calculo dos quartis nos ajuda a entender como nossos dados estão distribuídos. Podemos por exemplo comparar:
 
-Q2 envolve Q1 + 70 - 79 - 80
+> Q2 - Q1 
 
-Q3 envolve Q2 + 82 - 84 - 90
+com
 
-Repare que o fim de Q1 e inicio de Q2 correspondem ao mesmo valor, por tanto é errado afirmar:
+> Q3 - Q2
 
-- “70 representa 25% dos menores valores.”
 
-O que os quartis (ou percentis) realmente indicam é:
+Se os valores foram próximos, podemos entender que a dispersão é semelhante acima e abaixo da mediana, mas se a diferença for maior de um dos lados significa que existe uma maior dispersão nele.
 
-- 25% dos dados são menores ou iguais a 70.
+Logo:
+
+~~~
+Q2 − Q1 ≈ Q3 − Q2 -->  A dispersão é semelhante nos dois lados da mediana.
+
+Q2 − Q1 > Q3 − Q2 -->  A dispersão é maior na parte inferior do conjunto (valores menores que a mediana)
+
+Q2 − Q1 < Q3 − Q2 -->  A dispersão é maior na parte superior do conjunto (valores maiores que a mediana)
+~~~
+
+No boxplot isso pode ser lido de uma maneira rápida - Valores distantes da caixa (representados pelos bigodes ou pelos outliers) podem **(não necessariamente)**  ser eliminados em uma análise, isso porque alguns modelos como os de Regressão Linear por exemplo, são sensíveis a outliers.
+
+
+Alguns pequenos exemplos de cenários do "mundo real" em que a análise de boxplots pode ajudar:
+
+
+- Definição de metas de alta performance --> "Queremos que nossa loja esteja acima de Q3, ou seja, no grupos das 25% melhores lojas em vendas".
+
+- Segmentação de clientes --> "Separar clientes em grupos como (clientes de baixo, médio e alto custo)".
+
+- Análise de desempenho --> "Queremos identificar se a nota atribuída a um funcionário é ou não um destaque em relação aos demais".
 
 <br />
-<hr />
+<br />
 <br />
 
 ## O que são outliers?
-
-<br />
-<br />
 
 Outliers são valores "discrepantes" em um conjunto de dados. Um método comum para identificá-los (método de Tukey) usa a Amplitude Interquartil (IQR), que é a diferença entre o terceiro quartil (Q3) e o primeiro quartil (Q1):
 
@@ -105,7 +114,7 @@ Abaixo do Limite Inferior: Q1 - 1.5 \* IQR
 Acima do Limite Superior: Q3 + 1.5 \* IQR
 
 <br />
-<hr />
+<br />
 <br />
 
 
@@ -149,7 +158,7 @@ $$
 
 
 <br />
-<hr />
+<br />
 <br />
 
 
