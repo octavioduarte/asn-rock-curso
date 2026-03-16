@@ -1,5 +1,19 @@
 # 📊 Atalhos Úteis
 
+
+- [Fórmula para Cálculo de Percentis](#-fórmula-para-cálculo-de-percentis)
+- [O que compreender ao calcular quartis](#o-que-compreender-ao-calcular-quartis)
+- [O que são outliers?](#o-que-são-outliers)
+- [Variância e Desvio Padrão](#variância-e-desvio-padrão)
+- [Coeficiente de variação](#coeficiente-de-variação)
+
+
+<br />
+<hr />
+<br />
+
+
+
 ## 🧮 Fórmula para Cálculo de Percentis
 
 ```text
@@ -10,7 +24,7 @@ k = (k/100) × (n + 1)
 🔹 **k** = percentil desejado (ex: 25 para o 25º percentil)  
 🔹 **n** = número total de observações
 
-### 🔢 Interpolação para Posições Não Inteiras
+#### 🔢 Interpolação para Posições Não Inteiras
 
 Quando o resultado **não é um número inteiro**, fazemos uma **média ponderada** entre os dois valores mais próximos.
 
@@ -40,12 +54,17 @@ P₃₅ = 3 + 16 = 19
 **💡 Interpretação:**  
 35% dos valores são **iguais ou menores** que 19 no conjunto ordenado.
 
-## 📝 Lembretes rápidos
+<br />
+<hr />
+<br />
+
+
+## O que compreender ao calcular quartis?
 
 <br />
 <br />
 
-**O que compreender ao calcular quartis**: Ao calcular o primeiro quartil (Q1) como um valor X, assumir que X é o ponto abaixo do qual se encontram 25% dos dados. Ou seja, Q1 não é o valor máximo dos primeiros 25%, mas sim o valor que demarca esse limite inferior - Exemplo:
+Ao calcular o primeiro quartil (Q1) como um valor X, assumir que X é o ponto abaixo do qual se encontram 25% dos dados. Ou seja, Q1 não é o valor máximo dos primeiros 25%, mas sim o valor que demarca esse limite inferior - Exemplo:
 
       - 70 70 70 70 79 80 82 84 90 90 91 95
 
@@ -67,7 +86,13 @@ O que os quartis (ou percentis) realmente indicam é:
 <hr />
 <br />
 
-**Outliers**: Outliers são valores "discrepantes" em um conjunto de dados. Um método comum para identificá-los (método de Tukey) usa a Amplitude Interquartil (IQR), que é a diferença entre o terceiro quartil (Q3) e o primeiro quartil (Q1):
+## O que são outliers?
+
+<br />
+<br />
+
+Outliers são valores "discrepantes" em um conjunto de dados. Um método comum para identificá-los (método de Tukey) usa a Amplitude Interquartil (IQR), que é a diferença entre o terceiro quartil (Q3) e o primeiro quartil (Q1):
+
 
 IQR = Q3 - Q1
 
@@ -84,7 +109,9 @@ Acima do Limite Superior: Q3 + 1.5 \* IQR
 <br />
 
 
-**Variância e Desvio Padrão**: Variância e Desvio Padrão são medidas de dispersão que por sua vez serve para nos ajudar a entender o quão dispersos estão nossos dados em relação a média.
+## Variância e Desvio Padrão
+
+Variância e Desvio Padrão são medidas de dispersão que por sua vez serve para nos ajudar a entender o quão dispersos estão nossos dados em relação a média.
 
 A **variância** é o resultado da média dos quadrados das diferenças (subtração) entre cada valor e a média aritmética do conjunto. 
 
@@ -125,7 +152,10 @@ $$
 <hr />
 <br />
 
-**Coeficiente de variação**: Nos diz em forma percentual o quanto os dados variam em relação a média - Tem 2 grandes propósitos:
+
+## Coeficiente de variação
+
+Nos diz em forma percentual o quanto os dados variam em relação a média - Tem 2 grandes propósitos:
 
 - Nos dizer o quanto o desvio padrão varia em relação a média (de forma percentual)
 - Comparar a variação de 2 conjuntos que estejam em escalas numéricas distintas.
